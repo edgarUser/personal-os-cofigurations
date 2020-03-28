@@ -44,5 +44,18 @@
 #sudo apt update
 #sudo apt install -y openjdk-8-jdk
 
+#------ JAVA_HOME config in ~/.bashrc -----
+#echo JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64 >> ~/.bashrc
+#echo 'export PATH=$PATH:$JAVA_HOME/bin' >> ~/.bashrc
+#source ~/.bashrc #To validate
+
+#------ install maven -----
+#sudo apt update
+#sudo apt install -y maven
+
 #------ clean packages -----
 sudo apt autoremove -y
+
+#------ additional configurations and commands -----
+#alias repos='cd /home/eg7/eworkspace/gitrepositories'
+#mvn archetype:generate -DgroupId=com.mx.hashing -DartifactId=java-project -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
