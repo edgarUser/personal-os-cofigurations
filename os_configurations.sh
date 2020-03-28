@@ -40,5 +40,9 @@
 #sudo apt update
 #sudo apt install -y git
 
+#------ install open-jdk -----
+#sudo apt update
+#sudo apt install -y openjdk-8-jdk
+
 #------ clean packages -----
 sudo apt autoremove -y
