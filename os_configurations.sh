@@ -53,8 +53,47 @@
 #sudo apt update
 #sudo apt install -y maven
 
+#------ install gimp -----
+#sudo apt update
+#sudo apt install -y gimp
+
+#------ install docker -----
+#sudo apt-get update
+#sudo apt-get install -y apt-transport-https ca-certificates curl gnupg-agent software-properties-common
+#curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+#sudo apt-key fingerprint 0EBFCD88
+#sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+#sudo apt-get update
+#sudo apt-get install docker-ce docker-ce-cli containerd.io
+#sudo groupadd docker
+#sudo usermod -aG docker $USER
+#newgrp docker
+
+#------ install kubernetes -----
+#sudo apt-get update && sudo apt-get install -y apt-transport-https
+#curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+#echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee -a /etc/apt/sources.list.d/kubernetes.list
+#sudo apt-get update
+#sudo apt-get install -y kubectl
+
+#------ install and start minikube -----
+#curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 && chmod +x minikube
+#sudo mkdir -p /usr/local/bin/
+#sudo install minikube /usr/local/bin/
+#minikube start --driver=virtualbox
+
 #------ clean packages -----
 sudo apt autoremove -y
+
+
+#Brother DCP-T510W Printer Driver
+#https://tutorialforlinux.com/2018/12/16/printer-brother-dcp-t510w-driver-ubuntu-18-04-how-to-download-and-install/
+#gunzip -c ~/Downloads/linux-brprinter-installer*.gz > /tmp/linux-brprinter-installer
+#gunzip -c linux-brprinter-installer*.gz > /tmp/linux-brprinter-installer
+#cd /tmp
+#sudo chmod +x linux-brprinter-installer*
+#sudo ./linux-brprinter-installer*
+#follow the next steps manually
 
 #------ additional configurations and commands -----
 #alias repos='cd /home/eg7/eworkspace/gitrepositories'
