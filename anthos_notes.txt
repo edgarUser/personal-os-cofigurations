@@ -1,0 +1,45 @@
+a424dbdd401faae4	https://qwiklabs.com/focuses/8462?locale=es&parent=catalog	Istio and Envoy
+f8ee9bc415cfd2d0	https://qwiklabs.com/focuses/8463?locale=es&parent=catalog	Grafana, Jaeger and Kiali
+
+
+gcloud container clusters get-credentials $CLUSTER_NAME --zone $CLUSTER_ZONE --project $GCLOUD_PROJECT
+
+35.222.219.210
+export GATEWAY_URL=35.222.219.210
+
+kubectl exec -it $(kubectl get pod -l app=ratings -o jsonpath='{.items[0].metadata.name}') -c ratings -- curl productpage:9080/productpage | grep -o "<title>.*</title>"
+
+35.222.219.210
+
+export GATEWAY_URL=35.222.219.210
+
+kubectl -n istio-system port-forward $(kubectl -n istio-system get pod -l app=kiali -o jsonpath='{.items[0].metadata.name}') 20001:20001
+
+http://35.222.219.210/productpage
+
+
+f8ee 9bc4 15cf d2d0
+
+export GCLOUD_PROJECT=qwiklabs-gcp-00-6e2778ce1cc3
+gcloud container clusters get-credentials $CLUSTER_NAME --zone $CLUSTER_ZONE --project $GCLOUD_PROJECT
+
+kubectl exec -it $(kubectl get pod -l app=ratings -o jsonpath='{.items[0].metadata.name}') -c ratings -- curl productpage:9080/productpage | grep -o "<title>.*</title>"
+
+34.70.66.182
+
+export GATEWAY_URL=34.70.66.182
+
+kubectl -n istio-system port-forward $(kubectl -n istio-system get pod -l app=prometheus -o jsonpath='{.items[0].metadata.name}') 9090:9090
+
+rate(istio_requests_total{destination_service=~"productpage.*", response_code="200"}[5m])
+
+
+kubectl -n istio-system port-forward $(kubectl -n istio-system get pod -l app=grafana -o jsonpath='{.items[0].metadata.name}') 3000:3000
+
+for n in `seq 1 9`; do curl -s -o /dev/null http://$GATEWAY_URL/productpage; done
+
+watch -n 1 curl -o /dev/null -s -w %{http_code} $GATEWAY_URL/productpage
+
+kubectl -n istio-system port-forward $(kubectl -n istio-system get pod -l app=jaeger -o jsonpath='{.items[0].metadata.name}') 20001:16686  
+
+kubectl -n istio-system port-forward $(kubectl -n istio-system get pod -l app=kiali -o jsonpath='{.items[0].metadata.name}') 20001:20001

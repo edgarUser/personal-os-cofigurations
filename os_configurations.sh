@@ -98,3 +98,6 @@ sudo apt autoremove -y
 #------ additional configurations and commands -----
 #alias repos='cd /home/eg7/eworkspace/gitrepositories'
 #mvn archetype:generate -DgroupId=com.mx.hashing -DartifactId=java-project -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+
+#echo "e5b72e9cfe20988991c9cd87bde43c0b691e3b67b01f76d23f8150615883ce11 *ubuntu-20.04-desktop-amd64.iso" | shasum -a 256 --check
+#https://jakevdp.github.io/PythonDataScienceHandbook/
