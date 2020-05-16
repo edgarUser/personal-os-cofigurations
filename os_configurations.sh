@@ -82,6 +82,17 @@
 #sudo install minikube /usr/local/bin/
 #minikube start --driver=virtualbox
 
+#------ install zoom -----
+#wget https://zoom.us/client/latest/zoom_amd64.deb
+#sudo apt install -y ./zoom_amd64.deb
+#sudo rm zoom_amd64.deb
+
+#------ install zoom -----
+sudo apt update
+sudo apt install -y nodejs
+sudo apt install -y npm
+
+
 #------ clean packages -----
 sudo apt autoremove -y
 
