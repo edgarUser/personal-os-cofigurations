@@ -87,12 +87,14 @@
 #sudo apt install -y ./zoom_amd64.deb
 #sudo rm zoom_amd64.deb
 
-#------ install zoom -----
-sudo apt update
-sudo apt install -y nodejs
-sudo apt install -y npm
+#------ install nodejs 8 and npm 3 -----
+#sudo apt update
+#sudo apt install -y nodejs
+#sudo apt install -y npm
 
-
+#------ install mognodb -----
+sudo apt update 
+sudo apt install -y mongodb
 #------ clean packages -----
 sudo apt autoremove -y
 
